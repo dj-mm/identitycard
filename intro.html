@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manash's Identity Card</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-dy0Xts6tOtgYlt2rY7I3gE9VcIftA19m8euA+eqVcf4bPeU3VcCfEjNw9HOi98Lb" crossorigin="anonymous">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #6dd5ed, #2193b0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #333;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 400px;
+      padding: 30px;
+      text-align: center;
+      position: relative;
+    }
+
+    .card img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 4px solid #2193b0;
+    }
+
+    .card h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .social-icons a {
+      text-decoration: none;
+      color: white;
+      font-size: 20px;
+      margin: 0 10px;
+      padding: 12px;
+      border-radius: 50%;
+      transition: background-color 0.3s ease;
+    }
+
+    .social-icons a.github { background-color: #333; }
+    .social-icons a.linkedin { background-color: #0077b5; }
+    .social-icons a.email { background-color: #c71610; }
+
+    .social-icons a i {
+      color: white;
+    }
+
+    .social-icons a:hover {
+      opacity: 0.8;
+    }
+
+    .btn {
+      background-color: #2193b0;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
+    }
+
+    .btn:hover {
+      background-color: #6dd5ed;
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #555;
+    }
+  </style>
+  <script>
+    function showMessage() {
+      alert("Follow us on Instagram, ID: manash.djmm");
+    }
+
+    // Function to dynamically generate social icons
+    function generateSocialIcons() {
+      const socialMediaCSV = [
+        { name: "GitHub", icon: "fab fa-github", url: "https://github.com/dj-mm", color: "#333" },
+        { name: "LinkedIn", icon: "fab fa-linkedin", url: "https://www.linkedin.com/in/manash-mishra-918542221/", color: "#0077b5" },
+        { name: "Email", icon: "fas fa-envelope", url: "mailto:manashmishra.soraon@gmail.com", color: "#c71610" }
+      ];
+
+      const socialIconsContainer = document.querySelector('.social-icons');
+      socialMediaCSV.forEach((social) => {
+        const a = document.createElement('a');
+        a.href = social.url;
+        a.target = '_blank';
+        a.style.backgroundColor = social.color;
+        a.innerHTML = `<i class="${social.icon}"></i>`;
+        socialIconsContainer.appendChild(a);
+      });
+    }
+
+    // Call the function after page loads
+    window.onload = generateSocialIcons;
+  </script>
+</head>
+<body>
+
+  <div class="card">
+    <img src="2.jpeg" alt="Manash's Profile Image">
+    <h1>Manash Mishra</h1>
+    <p>Founder of Code Crafters Community, A2z Solutions, and BharatGen. B.Tech student passionate about coding, web development & IoT.</p>
+   
+    <div class="social-icons">
+      <!-- Social media icons will be inserted here by JavaScript -->
+    </div>
+
+    <button class="btn" onclick="showMessage()">Connect with Me</button>
+
+    <footer>Developed by Manash</footer>
+  </div>
+
+</body>
+</html>
